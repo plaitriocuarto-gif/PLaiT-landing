@@ -1,0 +1,9 @@
+# Material de trabajo: no se publica en GitHub Pages
+_produccion-video/
+.backup-*/
+scripts/
+directivas/
+LANDING-PAGE.md
+
+# Imagen suelta de la que salio el logo: no hace falta publicarla
+WhatsApp Image *.jpeg

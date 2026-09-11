@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227 249" width="227" height="249" fill="none">
+  <!-- Monogram LT -->
+  <!-- L -->
+  <path d="M13 0H43V170H107V200H13V0Z" fill="#0F2459"/>
+  <!-- T -->
+  <path d="M65 36H227V66H158V223H127V66H65V36Z" fill="#0F2459"/>
+  <!-- Horizontal Line -->
+  <rect x="0" y="242" width="224" height="7" fill="#0F2459"/>
+</svg>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente de IA para consultorios odontológicos | PLaiT</title>
+  <meta name="description" content="Un asistente que contesta el WhatsApp de tu consultorio las 24 horas, responde precios y obras sociales, y agenda los turnos solo. Somos PLaiT, de Río Cuarto. Agendá una llamada de 15 minutos.">
+  
+  <!-- Preload de imagen crítica LCP -->
+  <link rel="preload" as="image" href="assets/images/video-poster-vertical.webp" type="image/webp" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="assets/images/video-poster-horizontal.webp" type="image/webp" media="(min-width: 768px)">
+  
+  <!-- Google Fonts con preconnect y font-display swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Asistente de IA para consultorios odontológicos | PLaiT">
+  <meta property="og:description" content="Un asistente que contesta el WhatsApp de tu consultorio las 24 horas, responde precios y obras sociales, y agenda los turnos solo. Somos PLaiT, de Río Cuarto. Agendá una llamada de 15 minutos.">
+  <meta property="og:image" content="assets/images/og-plait.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=2026091102">
+
+  <!-- Datos Estructurados JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "PLaiT",
+        "description": "Asistentes de IA para la atención por WhatsApp de consultorios y clínicas odontológicas.",
+        "email": "plaitriocuarto@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Río Cuarto",
+          "addressRegion": "Córdoba",
+          "addressCountry": "AR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Mis pacientes se van a dar cuenta de que no hablan con una persona?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, y no lo escondemos. El asistente se presenta como el asistente del consultorio. Lo que la gente valora no es creer que habla con un humano: es que le contesten a las once de la noche y le resuelvan el turno."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Funciona con el número de WhatsApp que ya uso?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, tus pacientes siguen escribiendo al mismo número de siempre. En la llamada te explicamos qué cambia del lado tuyo según cómo estés usando WhatsApp hoy, porque no es igual en todos los casos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa con los datos de mis pacientes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Las conversaciones son tuyas y quedan en tu WhatsApp, igual que ahora. No usamos la información de tus pacientes para ninguna otra cosa. Si necesitás un acuerdo de confidencialidad firmado, lo firmamos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto sale?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hay un pago único de implementación, que es armarlo y entrenarlo con la información de tu consultorio, y una cuota mensual. El número depende del volumen de consultas que recibas, así que el precio real te lo damos en la llamada con tu volumen sobre la mesa. Te lo decimos en los primeros diez minutos, no después de una presentación de una hora."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Tengo que firmar un contrato largo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mes a mes. Avisás y se corta el mes siguiente. Sin permanencia mínima y sin penalidad."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tiempo me lleva a mí?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La llamada de 15 minutos y un rato juntando la información: precios, horarios, obras sociales, tratamientos. La configuración la hacemos nosotros."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Y si le contesta cualquier cosa a un paciente?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Solo responde con la información que cargamos. Fuera de eso deriva. Además, las primeras dos semanas revisamos las conversaciones con vos, una por una si hace falta."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- 4.1. Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" aria-label="PLaiT inicio" class="brand-link">
+          <img src="assets/images/plait-logo.svg" alt="PLaiT"
+               class="brand-logo" width="43" height="60">
+        </a>
+        <a href="#agendar" class="header-btn cta-cal">Agendar llamada</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 4.2. Hero -->
+    <section class="hero-section" id="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-header" id="hero-header-container">
+          <!-- El chip se inyecta dinámicamente si existe el parámetro ?n= -->
+          <p class="hero-eyebrow">PARA CONSULTORIOS Y CLÍNICAS ODONTOLÓGICAS</p>
+          <h1 class="hero-title" id="hero-title">Tu consultorio contesta cada consulta de WhatsApp<br class="desktop-break"> en menos de un minuto. También a las once de la noche.</h1>
+          <p class="hero-bajada">Mirá los 60 segundos de acá abajo. Un paciente escribe un domingo a la noche por una urgencia y termina con el turno agendado, sin que nadie del consultorio toque el teléfono.</p>
+        </div>
+
+        <!-- Fachada de video con click-to-play -->
+        <div class="video-container">
+          <div class="video-wrapper" id="video-wrapper">
+            <button type="button" class="video-facade" id="video-facade" aria-label="Reproducir el video de demostración, 60 segundos">
+              <picture>
+                <source media="(max-width: 767px)" srcset="assets/images/video-poster-vertical.webp" type="image/webp" width="1080" height="1350">
+                <source media="(max-width: 767px)" srcset="assets/images/video-poster-vertical.jpg" type="image/jpeg" width="1080" height="1350">
+                <source srcset="assets/images/video-poster-horizontal.webp" type="image/webp">
+                <img src="assets/images/video-poster-horizontal.jpg" alt="Un paciente con dolor de muelas mira el celular un domingo a las 23:41" width="1600" height="900" loading="eager" fetchpriority="high">
+              </picture>
+              <span class="play-btn" aria-hidden="true">
+                <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="6,4 20,12 6,20"></polygon></svg>
+              </span>
+            </button>
+          </div>
+          <p class="video-caption">1 minuto. Con subtítulos.</p>
+        </div>
+
+        <!-- CTA Principal del Hero -->
+        <div class="hero-cta-group">
+          <a href="#agendar" class="btn-cta cta-cal">Agendar una llamada de 15 minutos</a>
+          <p class="microcopy">Videollamada · Sin costo · Hablás con uno de los tres socios</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.3. Franja de hechos -->
+    <section class="hechos-section" aria-label="Hechos clave de PLaiT">
+      <div class="container">
+        <div class="hechos-grid">
+          <div class="hecho-item">Empresa de Argentina. Córdoba, Río Cuarto.</div>
+          <div class="hecho-item">Se conecta a tu WhatsApp actual, sin cambiar de número</div>
+          <div class="hecho-item">Mes a mes, sin permanencia</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.4. El problema -->
+    <section class="problema-section" id="problema" aria-labelledby="problema-title">
+      <div class="container">
+        <div class="problema-wrapper">
+          <h2 id="problema-title">Antes de seguir leyendo, abrí el WhatsApp del consultorio.</h2>
+          <p class="problema-bajada">Fijate cuántos mensajes entraron esta semana después de las 20:00, y cuántos entraron sábado y domingo. Contá cuántos siguieron sin respuesta hasta el lunes a la mañana. Ese número es de lo que estamos hablando. No te vamos a tirar una estadística sacada de internet: la única que importa acá es la tuya.</p>
+          <div class="problema-lista">
+            <article class="problema-item">
+              <h3>La urgencia del domingo.</h3>
+              <p>Alguien con dolor no espera al lunes. Busca en Google, le escribe a tres consultorios y va al que le contesta. Si vos contestás el lunes a las nueve, ya se atendió en otro lado.</p>
+            </article>
+            <article class="problema-item">
+              <h3>La misma pregunta, cincuenta veces por semana.</h3>
+              <p>Cuánto sale una limpieza. Si atienden tal obra social. Si hay turno esta semana. Dónde quedan. Tu recepcionista contesta eso todo el día en vez de ocuparse del paciente que está parado enfrente del mostrador.</p>
+            </article>
+            <article class="problema-item">
+              <h3>El turno que se cayó en el medio.</h3>
+              <p>La consulta entró, alguien la vio tarde, contestó al otro día y ya no hubo respuesta. Ese paciente no aparece en ningún reporte. Simplemente no vino.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.5. La demostración escrita -->
+    <section class="demo-section" id="demostracion" aria-labelledby="demo-title">
+      <div class="container">
+        <div class="demo-header">
+          <h2 id="demo-title">Así contesta. Esta es una conversación completa, sin cortes.</h2>
+          <p class="demo-bajada">Ejemplo de una conversación con el asistente configurado para un consultorio odontológico. Es el mismo asistente que ves en el video.</p>
+        </div>
+
+        <div class="demo-grid">
+          <!-- Columna Izquierda: Chat simulado en HTML y CSS puro -->
+          <div class="chat-container" role="region" aria-label="Transcripción de la conversación de WhatsApp">
+            <div class="chat-bubble bubble-paciente">
+              <p>Hola, buenas noches. Se me partió una muela y me duele bastante. ¿Atienden urgencias?</p>
+              <span class="chat-time">23:41</span>
+            </div>
+
+            <div class="chat-bubble bubble-asistente">
+              <p>Buenas noches. Sí, atendemos urgencias. Una consulta para ubicarte mejor: ¿el dolor es constante o aparece solo al masticar o al tomar algo frío?</p>
+              <span class="chat-time">23:41</span>
+            </div>
+
+            <div class="chat-bubble bubble-paciente">
+              <p>Constante, desde hace como tres horas.</p>
+              <span class="chat-time">23:42</span>
+            </div>
+
+            <div class="chat-bubble bubble-asistente">
+              <p>Entendido. Para mañana tenemos dos horarios reservados para urgencias: 8:30 y 11:00. ¿Cuál te queda mejor?</p>
+              <span class="chat-time">23:42</span>
+            </div>
+
+            <div class="chat-bubble bubble-paciente">
+              <p>8:30</p>
+              <span class="chat-time">23:43</span>
+            </div>
+
+            <div class="chat-bubble bubble-asistente">
+              <p>Perfecto. ¿Me pasás tu nombre completo y tu DNI así te dejo el turno cargado?</p>
+              <span class="chat-time">23:43</span>
+            </div>
+
+            <div class="chat-bubble bubble-paciente">
+              <p>Martín Ferreyra, 34.221.708</p>
+              <span class="chat-time">23:44</span>
+            </div>
+
+            <div class="chat-bubble bubble-asistente">
+              <p>Listo, Martín. Te esperamos mañana a las 8:30 en Av. España 1240. Si durante la noche el dolor se vuelve muy fuerte, escribime por acá y aviso al odontólogo de guardia. Que descanses.</p>
+              <span class="chat-time">23:44</span>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Anotaciones conectadas -->
+          <div class="anotaciones-list">
+            <article class="anotacion-card">
+              <span class="anotacion-line" aria-hidden="true"></span>
+              <div class="anotacion-content">
+                <h3>23:41. El consultorio estaba cerrado.</h3>
+                <p>Nadie se despertó. Nadie miró el teléfono.</p>
+              </div>
+            </article>
+
+            <article class="anotacion-card">
+              <span class="anotacion-line" aria-hidden="true"></span>
+              <div class="anotacion-content">
+                <h3>Pregunta antes de responder.</h3>
+                <p>No larga un texto genérico sobre urgencias. Hace la pregunta que haría una recepcionista con experiencia, porque está entrenado con el criterio del consultorio.</p>
+              </div>
+            </article>
+
+            <article class="anotacion-card">
+              <span class="anotacion-line" aria-hidden="true"></span>
+              <div class="anotacion-content">
+                <h3>Ofrece dos horarios, no la agenda entera.</h3>
+                <p>Menos opciones, más turnos cerrados. Es una decisión del armado, no algo que hace solo.</p>
+              </div>
+            </article>
+
+            <article class="anotacion-card">
+              <span class="anotacion-line" aria-hidden="true"></span>
+              <div class="anotacion-content">
+                <h3>El turno queda cargado.</h3>
+                <p>Se sincroniza con la agenda del consultorio. A las 8:31 del día siguiente el turno ya está ahí, con el nombre y el motivo.</p>
+              </div>
+            </article>
+
+            <article class="anotacion-card">
+              <span class="anotacion-line" aria-hidden="true"></span>
+              <div class="anotacion-content">
+                <h3>Sabe cuándo llamar a una persona.</h3>
+                <p>Si Martín vuelve a escribir con un cuadro más grave, la conversación te llega a vos con todo el historial. No intenta resolverla.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.6. Qué hace -->
+    <section class="que-hace-section" id="que-hace" aria-labelledby="que-hace-title">
+      <div class="container">
+        <h2 id="que-hace-title">Lo que hace, en orden de importancia.</h2>
+        
+        <div class="card-principal">
+          <h3>Agenda el turno sola.</h3>
+          <p>No te deja una lista de mensajes para contestar cuando puedas. Te deja turnos cargados en la agenda, con nombre, motivo y horario. Esa es la diferencia entre un chatbot y esto.</p>
+        </div>
+
+        <div class="secundarios-grid">
+          <article class="secundario-item">
+            <h3>Contesta con la información exacta de tu consultorio.</h3>
+            <p>Precios, horarios, obras sociales, dirección, qué tratamientos hacés. Dice lo que vos cargaste. Ni más ni menos.</p>
+          </article>
+
+          <article class="secundario-item">
+            <h3>Te pasa la conversación cuando corresponde.</h3>
+            <p>Consultas clínicas, reclamos, cualquier cosa fuera de su alcance. Te llega a tu WhatsApp con todo el historial de la charla.</p>
+          </article>
+
+          <article class="secundario-item">
+            <h3>Si no sabe, lo dice.</h3>
+            <p>No improvisa precios ni opiniones sobre un tratamiento. Avisa que lo va a consultar y te notifica.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.7. Cómo se pone en marcha -->
+    <section class="marcha-section" id="puesta-en-marcha" aria-labelledby="marcha-title">
+      <div class="container">
+        <h2 id="marcha-title">De la primera llamada al primer turno agendado: entre 7 y 12 días.</h2>
+        <p class="marcha-bajada">Los 7 a 12 días son el armado, una sola vez. Una vez que está andando, contesta en segundos, todos los días.</p>
+        <p class="marcha-nota">
+          Ese plazo puede estirarse si tu número de WhatsApp todavía no está verificado. De la
+          verificación nos ocupamos nosotros, te damos un número verificado, pero es un trámite que
+          depende de tiempos que no manejamos.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-step">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <span class="step-label">PASO 1</span>
+            <h3>Una llamada de 15 minutos.</h3>
+            <p>Nos contás cómo atienden hoy y qué les preguntan todo el día. Salimos de ahí con la lista de lo que el asistente tiene que saber. Si en esa llamada nos damos cuenta de que esto no te sirve, te lo decimos ahí mismo.</p>
+          </div>
+
+          <div class="timeline-step">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <span class="step-label">PASO 2</span>
+            <h3>Lo armamos y lo probás vos primero.</h3>
+            <p>Cargamos tus tratamientos, precios, horarios y obras sociales. Te pasamos un número para que le escribas como si fueras un paciente, antes de que se conecte a nada tuyo.</p>
+          </div>
+
+          <div class="timeline-step">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <span class="step-label">PASO 3</span>
+            <h3>Lo conectamos a tu WhatsApp.</h3>
+            <p>Mismo número, misma línea. Las primeras dos semanas revisamos las conversaciones con vos y ajustamos lo que haga falta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.8. Qué no hace -->
+    <section class="que-no-hace-section" id="que-no-hace" aria-labelledby="que-no-hace-title">
+      <div class="container">
+        <div class="no-hace-wrapper">
+          <h2 id="que-no-hace-title">Antes de que agendes, tres cosas que preferimos decirte ahora.</h2>
+          <div class="no-hace-lista">
+            <article class="no-hace-item">
+              <h3>No reemplaza a tu recepcionista.</h3>
+              <p>Se ocupa de lo repetitivo y de todo lo que entra cuando el consultorio está cerrado. La atención de mostrador y el trato con el paciente que ya está adentro los sigue haciendo una persona.</p>
+            </article>
+
+            <article class="no-hace-item">
+              <h3>No te sirve si recibís pocas consultas.</h3>
+              <p>Si te entran cinco mensajes por semana, esto no te va a cambiar nada. Te lo vamos a decir en la llamada en vez de venderte algo que no vas a usar.</p>
+            </article>
+
+            <article class="no-hace-item">
+              <h3>No da diagnósticos ni opina sobre tratamientos.</h3>
+              <p>Ante cualquier consulta clínica, deriva. No es un criterio que se pueda automatizar y no lo intentamos.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4.10. Preguntas frecuentes -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq-wrapper">
+          <h2 id="faq-title">Lo que nos preguntan siempre.</h2>
+          
+          <div class="faq-list">
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="faq-panel-1" id="faq-btn-1">
+                <span>¿Mis pacientes se van a dar cuenta de que no hablan con una persona?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+                <p>Sí, y no lo escondemos. El asistente se presenta como el asistente del consultorio. Lo que la gente valora no es creer que habla con un humano: es que le contesten a las once de la noche y le resuelvan el turno.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">
+                <span>¿Funciona con el número de WhatsApp que ya uso?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" hidden>
+                <p>Sí, tus pacientes siguen escribiendo al mismo número de siempre. En la llamada te explicamos qué cambia del lado tuyo según cómo estés usando WhatsApp hoy, porque no es igual en todos los casos.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">
+                <span>¿Qué pasa con los datos de mis pacientes?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" hidden>
+                <p>Las conversaciones son tuyas y quedan en tu WhatsApp, igual que ahora. No usamos la información de tus pacientes para ninguna otra cosa. Si necesitás un acuerdo de confidencialidad firmado, lo firmamos.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">
+                <span>¿Cuánto sale?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" hidden>
+                <p>Hay un pago único de implementación, que es armarlo y entrenarlo con la información de tu consultorio, y una cuota mensual. El número depende del volumen de consultas que recibas, así que el precio real te lo damos en la llamada con tu volumen sobre la mesa. Te lo decimos en los primeros diez minutos, no después de una presentación de una hora.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">
+                <span>¿Tengo que firmar un contrato largo?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5" hidden>
+                <p>Mes a mes. Avisás y se corta el mes siguiente. Sin permanencia mínima y sin penalidad.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-6" id="faq-btn-6">
+                <span>¿Cuánto tiempo me lleva a mí?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-panel" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6" hidden>
+                <p>La llamada de 15 minutos y un rato juntando la información: precios, horarios, obras sociales, tratamientos. La configuración la hacemos nosotros.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-7" id="faq-btn-7">
+                <span>¿Y si le contesta cualquier cosa a un paciente?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-panel" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7" hidden>
+                <p>Solo responde con la información que cargamos. Fuera de eso deriva. Además, las primeras dos semanas revisamos las conversaciones con vos, una por una si hace falta.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.11. Cierre y Cal.com -->
+    <section class="cierre-section" id="agendar" aria-labelledby="cierre-title">
+      <div class="container">
+        <h2 id="cierre-title">15 minutos</h2>
+        <p class="cierre-bajada">Te preguntamos cómo atienden hoy y te decimos si esto te sirve o no.</p>
+        
+        <a href="#agendar" class="cierre-btn cta-cal">Agendar una llamada de 15 minutos</a>
+        <p class="cierre-microcopy">Videollamada por Google Meet · 15 minutos · Sin costo</p>
+
+        <!-- Embed inline de Cal.com con altura reservada -->
+        <div class="cal-container" id="cal-embed-container">
+          <div class="cal-inline-widget" id="cal-inline"></div>
+        </div>
+
+        <p class="cierre-contacto-line">¿Preferís escribirnos? <a href="#" class="link-cierre whatsapp-link">WhatsApp</a> o <a href="mailto:plaitriocuarto@gmail.com" class="link-cierre">plaitriocuarto@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 4.12. Barra sticky móvil -->
+  <aside class="mobile-sticky-bar" id="mobile-sticky-bar" aria-label="Acción rápida para agendar">
+    <a href="#agendar" class="btn-cta cta-cal">Agendar llamada de 15 minutos</a>
+  </aside>
+
+  <!-- 4.13. Pie -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/images/plait-logo.svg" alt="PLaiT"
+               class="footer-logo" width="53" height="76">
+          <p class="footer-desc">PLaiT. Asistentes de IA para la atención por WhatsApp. Río Cuarto, Córdoba, Argentina.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="mailto:plaitriocuarto@gmail.com" class="footer-link">
+            <span class="footer-icon-badge">
+              <img src="assets/images/icono-gmail.svg" alt="" class="footer-icon" width="18" height="18">
+            </span>
+            <span>plaitriocuarto@gmail.com</span>
+          </a>
+          <a href="#" class="footer-link whatsapp-link">
+            <span class="footer-icon-badge">
+              <img src="assets/images/icono-whatsapp.svg" alt="" class="footer-icon" width="18" height="18">
+            </span>
+            <span>WhatsApp</span>
+          </a>
+          <a href="#" class="footer-link instagram-link">
+            <span class="footer-icon-badge">
+              <img src="assets/images/icono-instagram.svg" alt="" class="footer-icon" width="18" height="18">
+            </span>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p>© 2026 PLaiT · <a href="/privacidad">Política de privacidad</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/config.js?v=2026091102"></script>
+  <script src="assets/js/main.js?v=2026091102"></script>
+</body>
+</html>
