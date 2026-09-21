@@ -128,6 +128,19 @@
     el.addEventListener('click', function () { mandarUnaVez('whatsapp'); });
   });
 
+  // ---- 3b. Demo en vivo ---------------------------------------------------
+  // demo-chat.js avisa sus hitos con el evento "plait:demo". Solo se anotan
+  // los de esta lista (la misma que acepta el Apps Script).
+  document.querySelectorAll('.cta-probar').forEach(function (btn) {
+    btn.addEventListener('click', function () { mandarUnaVez('probar_click'); });
+  });
+
+  var HITOS_DEMO = ['demo_chat', 'demo_5', 'demo_turno'];
+  window.addEventListener('plait:demo', function (e) {
+    var evento = e && e.detail && e.detail.evento;
+    if (HITOS_DEMO.indexOf(evento) !== -1) { mandarUnaVez(evento); }
+  });
+
   // ---- 4. Se va: cuánto vio en total --------------------------------------
   // pagehide es más confiable que beforeunload, sobre todo en celulares, donde
   // el navegador puede congelar la pestaña sin avisar.

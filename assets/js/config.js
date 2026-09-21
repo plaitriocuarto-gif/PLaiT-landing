@@ -15,6 +15,9 @@
  * 5. TRACK_URL: URL /exec de la app web de Google Apps Script que anota
  *    los eventos en la hoja "Eventos" de la planilla. Mientras este
  *    vacia, track.js no hace absolutamente nada y la pagina anda igual.
+ * 6. DEMO_CHAT_URL: webhook del workflow "Demo chat - Landing PLaiT" en el
+ *    n8n del VPS (Chat Trigger en modo embebido). Solo acepta pedidos que
+ *    vengan de demo.plaitriocuarto.com y localhost:8081.
  * ==========================================================================
  */
 
@@ -25,5 +28,6 @@ window.PLAIT_CONFIG = {
   VIDEO_VERTICAL: "assets/video/demo-vertical.mp4",
   INSTAGRAM_URL: "https://www.instagram.com/plait_ia/",
   EMAIL: "plaitriocuarto@gmail.com",
-  TRACK_URL: "https://script.google.com/macros/s/AKfycbzFvGCR6OI7VBV-4GJvnufiUZ9SuA7tepr8qp6n4ECDSMg28TbNTF5MvF_MkGNdDf4daA/exec"
+  TRACK_URL: "https://script.google.com/macros/s/AKfycbzFvGCR6OI7VBV-4GJvnufiUZ9SuA7tepr8qp6n4ECDSMg28TbNTF5MvF_MkGNdDf4daA/exec",
+  DEMO_CHAT_URL: "https://n8n-ot6p.srv1984079.hstgr.cloud/webhook/7c1f5e2a-3b9d-4e6f-9a21-d4c8b0e5f713/chat"
 };

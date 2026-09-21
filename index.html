@@ -28,7 +28,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
   <!-- Estilos principales -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=2026091102">
+  <link rel="stylesheet" href="assets/css/styles.css?v=2026092105">
 
   <!-- Datos Estructurados JSON-LD -->
   <script type="application/ld+json">
@@ -158,8 +158,51 @@
 
         <!-- CTA Principal del Hero -->
         <div class="hero-cta-group">
+          <a href="#probar" class="btn-cta btn-probar cta-probar">Quiero probarlo</a>
+          <p class="microcopy-probar">Escribile vos, como si fueras un paciente<span class="sep" aria-hidden="true"> · </span><br class="mobile-break">Sin registrarte · Prueba gratuita</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.2b. Demo en vivo: el asistente funcionando de verdad -->
+    <section class="probar-section" id="probar" aria-labelledby="probar-title">
+      <div class="container">
+        <div class="probar-header">
+          <h2 id="probar-title">Probalo vos. Escribile como si fueras un paciente.</h2>
+          <p class="probar-bajada">Es el asistente funcionando de verdad, armado para un consultorio de ejemplo. Preguntale precios, obras sociales o pedile un turno.</p>
+        </div>
+
+        <div class="vivo-chat">
+          <div class="vivo-cabecera">
+            <span class="vivo-avatar" aria-hidden="true">CD</span>
+            <div class="vivo-titulo">
+              <strong>Consultorio Demo</strong>
+              <span class="vivo-estado" id="vivo-estado">en línea</span>
+            </div>
+          </div>
+
+          <div class="vivo-mensajes" id="vivo-mensajes" role="log" aria-live="polite" aria-label="Conversación con el asistente">
+            <div class="vivo-msg vivo-bot"><p>Hola, ¿en qué te puedo ayudar?</p></div>
+          </div>
+
+          <form class="vivo-form" id="vivo-form" autocomplete="off">
+            <label for="vivo-input" class="sr-only">Tu mensaje</label>
+            <input type="text" id="vivo-input" class="vivo-input" maxlength="500" placeholder="Escribí un mensaje" enterkeyhint="send">
+            <button type="submit" class="vivo-enviar" id="vivo-enviar" aria-label="Enviar mensaje">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5 21 12 3 3.5 3 10l12 2-12 2z"></path></svg>
+            </button>
+          </form>
+        </div>
+
+        <div class="vivo-recomendacion">
+          <p>Preguntale lo que quieras y te va a responder. Si no sabés por dónde empezar, estas son las consultas que más les llegan hoy a los consultorios: cuánto sale una limpieza, si trabajan con tu obra social, o pedile un turno porque te duele una muela.</p>
+        </div>
+
+        <p class="vivo-nota">Consultorio, precios y profesionales de ejemplo. No escribas datos reales de pacientes.</p>
+
+        <div class="vivo-siguiente">
           <a href="#agendar" class="btn-cta cta-cal">Agendar una llamada de 15 minutos</a>
-          <p class="microcopy">Videollamada · Sin costo · Hablás con uno de los tres socios</p>
+          <p class="microcopy">Te mostramos cómo funcionaría en tu consultorio, con tus precios y tus horarios. Sin costo ni compromiso.</p>
         </div>
       </div>
     </section>
@@ -532,8 +575,9 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/config.js?v=2026091102"></script>
+  <script src="assets/js/config.js?v=2026092101"></script>
   <script src="assets/js/main.js?v=2026091102"></script>
-  <script src="assets/js/track.js?v=2026091401"></script>
+  <script src="assets/js/track.js?v=2026092101"></script>
+  <script src="assets/js/demo-chat.js?v=2026092102"></script>
 </body>
 </html>
